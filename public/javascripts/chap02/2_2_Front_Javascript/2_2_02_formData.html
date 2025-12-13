@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data</title>
+    <!--  Html의 form Tag를 동적으로 제어할수있는 기능으로 ajax와 함께사용하는 객체이다.
+          formData생성자로 formData객체를 생성한다. 다음 객체를 하나씩 입력한다.
+     -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const formData = new FormData(); // new 키둬드로 formData 객체를 생성한다.
+        formData.append('name','opennote');  // 생성된 객체에 key , value 형태로 입력한다. (Map형태)
+        formData.append('age',13);
+        formData.append('address','JunNam Naju');
+        formData.append('301member','이길동');
+        formData.append('301member','김길동');
+        formData.append('301member','전길동');
+
+        formData.has("address"); // true : 객체 내부에 요소 존재여부를 확인 (입력 : key)
+        formData.has("birth");  // false : 객체 없음
+
+        formData.get('address'); // 'JunNam Naju'
+        formData.getAll('301member'); // ['이길동','김길동','전길동']
+
+        formData.append('302member',['홍길동','박길동','최길동']); // value 로 Array도 입력가능
+        formData.get('302member'); // '홍길동 , 박길동 , 최길동'
+
+        formData.delete("302member"); // 객체의 요소를 삭제한다.
+        formData.get('302member'); // null
+
+        formData.set('302member','고길동');
+        formData.getAll('302member'); // ['고길동']  getAll함수는 Array를 return한다.
+
+        (async () => {
+            try{
+                /* axios 사용방법 :  https://veneas.tistory.com/entry/axiosjs-GET-POST-방식으로-서버와-통신하기 */
+                const result = await axios.post("https://www.zerocho.com/api/post/json" , formData );
+                // Post방식의 전달할 정보를 2번째 인자값이 입력한다.
+                console.log(result);
+                console.log(result.data);
+            }
+            catch(error){
+                console.error(err.name +" : "+ err.message);
+            }
+        })();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

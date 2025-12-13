@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax axios</title>
+    <!-- AJAX
+         ajax는 XmlHttpRequest나 fetch를 활용한 비동기 통신 기술이다.
+         보통 jQuery나 axios같은 라이브러리를 활용한다.
+         여기서는 axios 라이브러리를 활용해 보기로 한다.
+
+         Node를 기동(bin/www)하고 3000번 port가 열리면
+         http://localhost:3000/javascripts/chap02/2_2_Front_Javascript/2_2_01_front.html
+         주소로 웹브라우저에 입력해본다. (웹환경이 아니면 axios동작 안함)
+
+         요청결과는 웹브라우저에서 devtools(F12)을 열어 console 탭을 확인해본다.
+     -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        /* axios 객제는 promise 객체이다. 그래서 then , catch를 사용할수있다.   */
+        axios.get("https://www.zerocho.com/api/get")
+            .then((result) => {
+                console.log(result);
+                console.log(result.data); // {}
+            })
+            .catch((err) => {
+                console.error(err.name +" : "+ err.message);
+            });
+
+        /* axios promise 객체이므로 async /await방식으로 변경할수도 있다. */
+        (async() => {
+            try{
+                const result = await  axios.get("https://www.zerocho.com/api/get");
+                console.log(result);
+                console.log(result.data);
+            }
+            catch(err){
+                console.error(err.name +" : "+ err.message);
+            }
+        })();
+
+        /* 이번에는 POST방식으로 요청을 보내본다.  */
+        (async () => {
+            try{
+                /* axios 사용방법 :  https://veneas.tistory.com/entry/axiosjs-GET-POST-방식으로-서버와-통신하기 */
+                const result = await axios.post("https://www.zerocho.com/api/post/json"
+                                          , {name : 'zerocho', birth : 1994 }
+                                      );
+                console.log(result);
+                console.log(result.data);
+            }
+            catch(err){
+                console.error(err.name +" : "+ err.message);
+            }
+        })();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

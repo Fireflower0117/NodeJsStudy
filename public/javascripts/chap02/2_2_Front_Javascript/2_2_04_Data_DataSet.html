@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data DataSet</title>
+  <!-- 웹서버를 노드로 사용하는 경우, 클라이언트(FrontEnd)는 서버와 데이터를 빈번하게 주고 받는다.
+       이떄 서버에서 보내준 Data를 FrontEnd어디에 넣을지 고민하게 된다.
+       이떄 고려할점의 첫번쨰는 보안문제이다.
+       보안과 관련된 데이터가 아니면 상관없지만, 보안과 관련된 민감한 데이터가 있다면
+       javascrpt변수에 저장해도 되지만 HTML5에서는 데이터를 저장하는 공식적이 방법이있다.
+       data속성을 활용하는것이다. (data attribute) , 설정할땐 data , 조회할땐 dataset이다.
+  -->
+</head>
+<body>
+  <ul>
+    <li data-id="1" data-name="kim" data-user-job="programer">Kim Gil Dong</li>
+    <li data-id="2" data-name="park" data-user-job="designer">Park Gil Dong</li>
+    <li data-id="3" data-name="choi" data-user-job="gamer">Choi Gil Dong</li>
+    <li data-id="4" data-name="yoon" data-user-job="ceo">Yoon Gil Dong</li>
+  </ul>
+  <script>
+    const items = document.querySelectorAll("li");
+    items.forEach(li => {
+      console.log(li.dataset);
+    });
+  </script>
+</body>
+</html>

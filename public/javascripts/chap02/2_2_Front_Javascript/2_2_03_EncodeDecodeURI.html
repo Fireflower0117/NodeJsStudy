@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Encode Decode ULI</title>
+  <!-- ajax요청을 보낼때 조소에 한글이 들어가는 경우, 서버의 환경에 따라 한글을 인식하지 못하는 경우가 있다.
+       ex) https://localhost:3000/search/멤버들
+       이런경우 한글 주소만 encodeURIComponent 함수를 활용한다.
+       주소 문자열은 백틱(`)으로 감싼다. ( 백틱 = shift를 누르고 숫자1 왼쪽 '~' 키를 누르면 된다. )
+     -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+
+    (async () => {
+      try{
+        /* axios 사용방법 :  https://veneas.tistory.com/entry/axiosjs-GET-POST-방식으로-서버와-통신하기 */
+        const result = await axios.get(`https://www.zerocho.com/api/search/${encodeURIComponent('노드')}`);
+        /* 2025.12.13일 현재 https://www.zerocho.com/api/search/ 는 CORS 에러 발생
+        *  https://nayah.tistory.com/162
+        *
+        *  반대로 주소를 받는쪽(Server)쪽에서는 decodeURIComponent 를 활용해 한글로 복구할수있다.
+        *  decodeURIComponent('%EB%85%B8%EB%93%9C'); // 노드
+        **/
+        console.log(result);
+        console.log(result.data);
+      }
+      catch(err){
+        console.error(err);
+      }
+    })();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
