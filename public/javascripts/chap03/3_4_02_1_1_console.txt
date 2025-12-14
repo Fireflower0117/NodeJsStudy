@@ -1,0 +1,6 @@
+지금까지 사용했던 console도 노드에서는 window대신 global객체안에 들어있어서 호출이 가능했다.
+사용법은 웹브라우저의 window.console 과 거의 유사하다.
+
+console객체는 보통 디버깅용으로 사용가는 경우가 많다.
+console의 대표적인 함수가 console.log함수이다.
+node의 console을 활용한 로깅함수들을 알아보기로 한다.

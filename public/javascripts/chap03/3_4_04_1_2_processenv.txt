@@ -1,0 +1,26 @@
+REPL에서 process.env를 실행하면 매우많은 정보가 출력된다.
+--------------------------------------------------------
+{projecthome}\public\javascripts\chap03>node
+Welcome to Node.js ~~~~~
+>process.env
+
+자세히 보면 이정보들이 OS에 설정된 환경변수임을 알수있다.
+시스템환경변수가 노드에 직접 영향을 미치기도 한다. 대표적인 것으로
+UV_THREADPOOL_SIZE , NODE_OPTIONS가 있다
+
+NODE_OPTIOPNS=--max-old-space-size=8192
+UV_THREADPOOL_SIZE=8
+왼쪽이 환경변수 이름이고, 오른쪽이 값이다. NODE_OPTIONS는 노스를 실행할떄 옵션들을 입력할수있는 환경변수이다.
+--max-old-space-size는 노드의 메모리를 최대 8GB까지 사용할수있게 한다.
+옵션이 다양하게 존재한다 자세한 내용은 아래 링크를 참조한다.
+
+process.env는 서비스의 중요한 키정보를 저장하는 공간으로 활용한다.
+서버에 DB의 비밀번호나 각종API의 Key정보를 입력하는것은 위험함으로 비추천한다.
+
+따라서 중요비밀번호는 다래와 같이 process.env의 속성으로 대체한다.
+const secretKey = process.env.SECRET_KEY;
+const secretCode = process.env.SECRET_CODE;
+
+이제 process.env에 직접 SECRET_KEY , SECRET_CODE를 입력면 된다.
+입력방법은 운영체제마다 차이가 있지만 모든 운영체제에 동일하게 넣을수있는 방법을 제공하며
+이후에 학습할 dotenv를 사용할떄 학습해 보기로 한다. 

@@ -1,0 +1,24 @@
+process객체는 현재 실행중인 노드 프로세스정보를 담고있다.
+process객체 안에는 다양한 속성이 있는데 REPL에서 순서대로 실행해본다.
+결과값은 사용자마다 다를수있다.
+
+--------------------------------------------------------
+{projecthome}\public\javascripts\chap03>node
+Welcome to Node.js ~~~~~
+>process.version
+'v22.18.0'  // 설치된 노드의 버전정보
+>process.arch
+'x64'       // 프로세스 아키텍처 정보
+>process.platform
+'win32'     // 운영체게 플랫폼 정보
+>process.pid
+14684       // 프로세스 아이디 , 프로세스를 여러개 가질떄 구분해서 사용할수있다.
+>process.uptime()
+228.8312575 // 프로세스가 시작된후 경과시간 (단위는 초(second)이다. )
+>process.execPath
+'D:\\RuntimeConfig\\nodejs\\node.exe' // 노드의 경로
+>process.cwd()
+'D:\\JetBrains\\workspace-egov\\NodeJsBookStudy\\public\\javascripts\\chap03'  // 현재 프로세스가 실행중인 위치
+>process.cpuUsage()
+{ user: 531000, system: 109000 }  // 현재 CPU사용량
+
