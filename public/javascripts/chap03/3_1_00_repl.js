@@ -15,7 +15,7 @@
      undefined
 
      cmd창에 Hello World, Hello Node OpenNote가 인쇄되어 나오면 정상적으로 실행된것이다.
-     읽고(Read), 스크립트를분석하고(eval) , 실행/인쇄하고(Print) , 반복(Loop)할수있다면 그것이 REPL이다.
+     읽고(Read), 스크립트를분석하고(Eval) , 실행/인쇄하고(Print) , 반복(Loop)할수있다면 그것이 REPL이다.
      터미널창도 REPL이라 할수도 있다.
 
  */
