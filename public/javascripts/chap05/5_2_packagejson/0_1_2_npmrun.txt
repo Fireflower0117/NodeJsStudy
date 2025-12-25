@@ -1,0 +1,32 @@
+앞서 제작한 패키지 정보를 확인헀다. ( D:\NodeStudy\package.json )
+앞서 입력한 내뇽와 다르다면 편집도 가능하다
+
+{
+  "name": "nodestudy",
+  "version": "1.0.0",
+  "description": "NodeJs 프로젝트 생성 테스트입니다.",
+  "license": "ISC",
+  "author": "FireFlower",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+
+scripts 부분은 npm명령어를 저장해두는 부분이다.
+콘솔(터미널)에서 npm run test을 수행하면 "scripts"."test" 가 수행되어
+"echo \"Error: no test specified\" && exit 1" 가 실행된다.
+
+이제 콘솔(터미널)에서 직접 명령어를 실행해보자.
+    D:\NodeStudy>npm run test
+
+    > nodestudy@1.0.0 test
+    > echo "Error: no test specified" && exit 1
+
+    "Error: no test specified"
+
+ nodestudy@1.0.0은  nodestudy package릐 1.0.0버전을 의미한다.
+ package.json의 "scripts" 에슨 어러개의 명령어를 등록해두고 사용할수있다.
+ 보통 start명령어에 node [파일명]을 저장해두고 npm start로 실행한다.
+ start나 test명령은  명령어에 run을 붙이지 않아도 실행된다.

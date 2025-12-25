@@ -1,0 +1,21 @@
+앞으로의 학습 실습을 위해 npm을 통해 설치한 fs package를 제거해본다.
+콘솔(터미널)에서 projecthome경로로 이동후 아래 명령을 수행한다.
+
+{projecthome}> npm rm fs
+removed 1 package, and audited 115 packages in 1s
+.....
+
+이제 모듈 여러개를 동시에 설치해보는 방법을 알아본다.
+npm install [패키지1] [패키지2] [.....] 과 같이 패키지들을 나열하면된다.
+projecthome경로에서 아래 명령을 수행해본다.
+
+{projecthome}> npm install morgan cookie-parser express-session
+.......
+Run `npm audit` for details.
+
+{projecthome}> npm audit
+# npm audit report
+......
+
+여러 package들의 설치가 완료됐으면 package.json파일을 열어본다.
+"dependencies" 속성을 보면  설치한 패키지 (morgan, cookie-parser, express-session)와 버전정보가 들어있다.

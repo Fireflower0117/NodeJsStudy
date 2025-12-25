@@ -1,0 +1,17 @@
+개발용 패키지를 설치할수도있다. 실제 배포시에는 사용되지 않고 개발중에만 사용하는 패키지들이다.
+사용방법은 npm install --save-dev [패키지1] [패키지2] [패키지3] [.....]
+npm 설치시 --save-dev 옵션을 지정해서 개발용도로 설치하는 패키지임을 명시하는 방법이다.
+
+여기서는 나중에 학습할 nodemon package를 설치해본다.
+소스코드라 변경될떄마다 노드를 재실행해주는 패키지이다
+콘솔(터미널)에서 아래 명령을 수행한다.
+
+{projecthome}>npm install --save-dev nodemon
+added 30 packages, and audited 152 packages in 3s
+.......
+Run `npm audit` for details.
+
+{projecthome}> npm audit
+
+package.json파일을 열어본다.
+새로생긴 devDepandencies 속성은 개발용 package들만 따로 관리한다.

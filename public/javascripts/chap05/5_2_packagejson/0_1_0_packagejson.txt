@@ -1,0 +1,6 @@
+module을 제작하며 package를 추가하다보면 Package가 100개가 훌쩍 넘어버리는 경우가 있다.
+Package는 각각 고유한 버전이 있는데, 버전정보를 어딘가에 기록해야 한다.
+같은 Package라 할지라도 버전에 따라 기능이 다를수있으므로, 설치한 Package와 Version을 관리해야한다.
+Package,Version을 관리하는 파일이 바로 package.json이다.
+
+그래서 Node프로젝트를 시작하기전에 프로젝트 폴더내부에 반드시 package.json부터 만들고 시작해야 한다.

@@ -1,0 +1,44 @@
+npm에는 전역 설치 옵션도있다.
+패키지를 현재 폴더에 mode_modules에 설치하는것이 아니라 npm이 설치되어있는 폴더
+window => (C:\Users\사용자\AppData\Roaming\npm)
+mac    => (/usr/local/lib/node_modules)
+에 설치한다.
+
+이폴더는 시스템의 환경변수로 등록되어 있어서 전역 설치 패키지는 콘솔(터미널)에서 명령어로 사용할수도 있다.
+전역 설치를 했다고 해소 모든 프로젝트/패키지 에서 사용한다는 뜻은 아니다.
+대부분 명령어를 수행하기 위해 global로 설치하는 것이다.
+아래 명령어를 통해 전력 설치를 해보자
+
+리눅스나 Mac에서는 전역설치시 관리자 권한이 필요한 경우가 있다.
+npm 명령어 앞에 sudo 를 붙여 슈퍼유저임을 알린다. ex)>sudo npm install --global rimraf
+
+{projecthome}>npm install --global rimraf
+
+명령어의 옵션은 축약이 가능하다.
+npm install은 npm i, --save-dev 옵션은 -D로, --global 옵션은 -g로 축약해서 사용해도된다.
+ex) npm install --global rimraf  => npm i -g rimraf
+
+방금전에 설치한 rimraf 패키지는 리눅스나 mac에서 rm -rf명령어를 윈도우에서도 사용할수있도록 해주는 패키지이다.
+rm -rf는 지정한 파일이나 폴더를 삭제하는 명렁어이다.
+아래 명령을 통해 실습해본다.
+
+cmd를 열어 D:\>로 이동한다.
+D:\>rimraf NodeStudy
+
+명령수행후 D:\>로 가보면  NodeStudy 폴더가 없어진것을 확인할수있다.
+참고로 cmd가 아닌 파워쉘에서는 rimraf 명령이 동작지 않을수있다. 그럴땐 명령앞에 npx를 붙인다.
+ex) powershell D:\>npx rimraf NodeStudy
+
+
+전역설치를 기피하는 일부 개발자들도 존재한다.
+전역설피는 package.json에 기록되지 않아 다시 설치할때 어려움이 있기때문이다
+이런경우를 대비해 npx가 있다.
+
+{projecthome}>npm install --save-dev rimraf
+{projecthome}>npx rimraf node_modules
+
+위와같이 package.json의 devDepandencies에 기록한후 명령앞에 npx를 붙여 실행하면
+패키지를 전역으로 설치한것과 같은 효과로 명령을 수행할수있다.
+package가 package.json에 기록되어있어서 버전관리도 비교적 편리하다.
+앞으로 학습할떄도 전역설치(-g: -global)대신 npx를 사용한다.
+ㄴ

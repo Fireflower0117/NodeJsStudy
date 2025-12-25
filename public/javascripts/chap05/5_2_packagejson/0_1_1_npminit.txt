@@ -1,0 +1,74 @@
+먼저 콘솔로 프로젝트를 시작할 폴더로 이동후 다름 명령어를 실행해본다.
+현제 학습중인 프로젝트는 이미 package.json이 있으므로 새로운 Directory를 생성하여 테스트해본다.
+
+1) cmd로 디렉토리 제작
+    ex) D:\> mkdir NodeStudy
+2) cmd로 경로이동
+    ex) cd D:\NodeStudy
+3) package.json 파일생성
+   ex) D:\NodeStudy>npm init
+
+     D:\NodeStudy>npm init
+     This utility will walk you through creating a package.json file.
+     It only covers the most common items, and tries to guess sensible defaults.
+
+     See `npm help init` for definitive documentation on these fields
+     and exactly what they do.
+
+     Use `npm install <pkg>` afterwards to install a package and
+     save it as a dependency in the package.json file.
+
+     Press ^C at any time to quit.
+     package name: (nodestudy) nodestudy
+     version: (1.0.0) 1.0.0
+     description: NodeJs 프로젝트 생성 테스트입니다.
+     entry point: (index.js) index.js
+     test command: [엔터키 Press]
+     git repository:[엔터키 Press]
+     keywords:[엔터키 Press]
+     author: FireFlower [본인별칭 입력]
+     license: (ISC) [엔터키 Press]
+     type: (commonjs) commonjs
+     About to write to D:\NodeStudy\package.json:
+
+     {
+       "name": "nodestudy",
+       "version": "1.0.0",
+       "description": "NodeJs 프로젝트 생성 테스트입니다.",
+       "main": "index.js",
+       "scripts": {
+         "test": "echo \"Error: no test specified\" && exit 1"
+       },
+       "author": "FireFlower",
+       "license": "ISC",
+       "type": "commonjs"
+     }
+
+
+     Is this OK? (yes) yes
+
+
+4) package.json 파일확인
+      D:\NodeStudy>package.json
+      파일을 메모장으로 열어본다.
+
+      방금 본인이 설정한 NodeProject의 환경정보가 package.json에 들어있다.
+
+      -------------------------------------------------------------------------------------------
+      package.json파일 설명
+
+      package name : 패키지 이름이다. package.json의 name속성에 저장된다.
+      version : 패키지의 버전정보이다. npm의 버전관리는 다소 엄격한 편이다.
+                나중에 다시 학습해보기로 한다.
+      entry point : 자바스크립트 실행파일 진입점이다.
+                    보통 마지막으로 module.exports수행하는 파일을 지정한다.
+                    package.json의 main속성에 저정된다.
+      test command : 코드를 테스트 할떄 입력할 명령어를 의미한다.
+                     package.json scripts속성 안에 test 속서에 저장됩니다.
+
+      git repository : 코드를 저장해둘 git주소를 의미한다.
+                       나중에 소스에 문자가 있을떄 이저장소에 방문해 문제점을 제기할수도 있다.
+                       pacakge.json의 repository 속성에 저장된다.
+      keywords: 키워드는 npm의 공식 홈페이지(https://npmjs.com)에서 패키지를 쉽게 찾을수있게 도움을 준다.
+                package.json의 keywords 속성에 저장된다.
+      license : 해당 패키지의 라이센스를 넣으면 된다.
