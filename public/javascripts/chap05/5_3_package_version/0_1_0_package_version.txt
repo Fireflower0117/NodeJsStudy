@@ -1,0 +1,22 @@
+패키지의 버전을 항상 세자리로 이뤄져있다. 심지어 노드의 버전도 세자리이다. ($.$.$)
+세자리인 이유는 SemVer방식의 넘버링을 따르기 때문이다.
+
+SemVer는 Semantic Versioning(유의적버전)을 의미하고, 버전을 구성하는 세자리는 모두 의미를 갖고있다는 뜻이다.
+
+메이저 버전 번호 : 하위 호환이 되지 않는 변경 사항
+마이너 버전 번호 : 하위 호환이 되는 변경 사항
+패치 버전 번호 : 간단한 버그 수정
+
+표기법	설명
+version	명시된 version과 일치
+>version	명시된 version보다 높은 버전
+>=version	명시된 version과 같거나 높은 버전
+<version	명시된 version보다 낮은 버전
+<=version	명시된 version과 같거나 낮은 버전
+~version	명시된 version과 근사한 버전 (패치 버전 범위 내)
+^version	명시된 version과 호환되는 버전 (마이너 버전 범위 내)
+~(틸드) : 패치 버전 범위 내에서 업데이트 (ex. ~0.1.1: 0.1.1 <= version < 0.2.0)
+^(캐럿) : 마이너 버전 범위 내에서 업데이트 (ex. ^1.0.2: 1.0.2 <= version < 2.0.0)
+
+참고 URL
+https://waaaafflewithberries.tistory.com/105

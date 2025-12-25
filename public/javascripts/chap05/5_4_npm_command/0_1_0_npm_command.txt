@@ -1,0 +1,38 @@
+npm으로 설치된 패키지를 사용하다보면 새로운 기능이 추가되거나 버그를 고친 새로운 버전이 나올때가 있다.
+npm outdated 명령어로 업데이트 할수있는 패키지를 확인해볼수있다.
+
+{projecthome}> npm outdated
+Package      Current  Wanted  Latest  Location                  Depended by
+debug          2.6.9   2.6.9   4.4.3  node_modules/debug        NodeJsBookStudy
+ejs            2.6.2   2.6.2  3.1.10  node_modules/ejs          NodeJsBookStudy
+express       4.16.4  4.16.4   5.2.1  node_modules/express      NodeJsBookStudy
+http-errors    1.6.3   1.6.3   2.0.1  node_modules/http-errors  NodeJsBookStudy
+morgan         1.9.1   1.9.1  1.10.1  node_modules/morgan       NodeJsBookStudy
+npm notice
+npm notice New minor version of npm available! 11.5.2 -> 11.7.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+npm notice To update run: npm install -g npm@11.7.0
+npm notice
+
+
+Current와 Wanted가 다르면 업데이트가 필요한 경우다. 이럴땐 npm update [packageName] 로 업데이트 할수있다.
+[packageName]없이 npm update 만 수행하면 업데이트 가능한 모든 package가 Wanted의 버전으로 업데이트 된다.
+Latest는 해당패키지의 최신버전이지만 package.json에 적힌 범위와 다르면 설치되지 않을수있다.
+
+npm uninstall [packageName]은 패키지를 제거하는 명령이다. node_modules폴더와 package.json에서 사라진다.
+npm rm [packageName]명령어로 패키지를 제거할수도있다.
+
+npm search [검색어]로 패키지를 검색할수도있다. 공식사이트(https://npmjs.com)에서 검색하면 편리하다.
+package.json에 넣어둔 keywords가 이때 사용된다.
+npm info [packageName] 패키지의 세부정보를 파악하고자 할떄 사용하는 명령어다.
+
+npm login은 npm 로그인을 위한 명령어다. npm공식 사이트에서 가입한 계정으로 로그인 하면된다.
+npm whoami는 로그인한 사용자가 누구인지 알수있다.
+npm logout은 npm login으로 로그인한 계정을 로그아웃 할떄 사용한다.
+
+npm version [버전] 명령어를 사용하면 package.json 버전을 올린다.
+ex) npm version 5.3.2 npm version minor
+
+npm publish는 자신이 만든 패키지를 배포할떄 사용한다.
+npm unpublish는 배포한 패키지를 제거할떄 사용한다.
+이외에도 많은 명령어가 있고, 공식문서(https://docs.npmjs.com)의 CLI Commands에서 확인 할수있다.
