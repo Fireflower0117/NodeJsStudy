@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/app",
-    "opennote": "node ./bin/opennote"
+    "opennote": "node ./bin/opennote",
+    "app_morgan": "node ./bin/app_cookie_morgan"
   },
   "dependencies": {
     "axios": "^1.13.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^17.2.3",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.18.2",
